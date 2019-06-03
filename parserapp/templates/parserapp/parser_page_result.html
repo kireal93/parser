@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>Parser service</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/parserapp.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Сервис парсинга телефонов и email</h1>
+        </div>
+        <table>
+            {% for entry in entrys %}
+                <tr>
+                    <th>{{ entry.num }}</th>
+                    <th>{{ entry.url }}</th>
+                    <th>
+                        {% for phone in entry.phones %}
+                            {{ phone }}
+                        {%endfor%}
+                    </th>
+                    <th>
+                        {% for email in entry.emails %}
+                            {{ email }}
+                        {%endfor%}
+                    </th>
+                </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>

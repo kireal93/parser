@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <head>
+        <title>Parser service</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/parserapp.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Сервис парсинга телефонов и email</h1>
+        </div>
+        <form method="POST">
+            <div class="enter_url">
+                <p>Введите url-адреса построчно</p>
+                <textarea name="urls_row"></textarea>
+            </div>
+            <div>
+                <button type="submit">Начать парсинг</button>
+            </div>
+        </form>
+</html>
